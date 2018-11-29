@@ -5,4 +5,4 @@ let bingPicture = async (ctx, next) => {
     ctx.body = ret
   }
 
-module.exports = {'GET /bingPicture': bingPicture }
+module.exports = {'GET /bingPicture': bingPicture, 'example': '/bingPicture' }

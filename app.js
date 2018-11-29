@@ -31,6 +31,7 @@ app.use(async (ctx, next) => {
 })
 
 // routes
-app.use(controller().routes(), controller().allowedMethods())
+let getController = controller()
+app.use(getController.routes(), getController.allowedMethods())
 
 module.exports = app

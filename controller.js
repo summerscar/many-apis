@@ -10,6 +10,8 @@ function addMapping(router, mapping) {
             var path = url.substring(5);
             router.post(path, mapping[url]);
             console.log(`register URL mapping: POST ${path}`);
+        } else if (url === 'example') {
+
         } else {
             console.log(`invalid URL: ${url}`);
         }
@@ -21,7 +23,6 @@ function addControllers(router) {
     var js_files = files.filter((f) => {
         return f.endsWith('.js');
     });
-
     for (var f of js_files) {
         console.log(`process controller: ${f}...`);
         let mapping = require(__dirname + '/controllers/' + f);

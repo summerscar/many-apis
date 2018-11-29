@@ -11,4 +11,4 @@ let bangumi = async (ctx, next) => {
     ctx.body = data
   }
 
-module.exports = {'GET /bangumi/:title': bangumi }
+module.exports = {'GET /bangumi/:title': bangumi, 'example': '/bangumi/无法成为野兽的我们' }

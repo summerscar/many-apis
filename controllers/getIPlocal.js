@@ -5,4 +5,4 @@ let getIPLocal = async (ctx, next) => {
     ctx.body = ret
   }
 
-module.exports = {'GET /getIPLocal/:ip': getIPLocal }
+module.exports = {'GET /getIPLocal/:ip': getIPLocal, 'example': '/getIPLocal/8.8.8.8' }
