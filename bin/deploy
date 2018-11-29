@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+const userHome = require('user-home')
+const fs = require('fs')
+const path = require('path')
+const node_ssh = require('node-ssh')
+const ssh = new node_ssh()
+
+ssh.connect({
+  host: '148.70.18.253',
+  username: 'root',
+  privateKey: path.join(userHome, '/.ssh/id_rsa')
+}).then(() => {
+    ssh.execCommand('cd many-apis/ && git pull && yarn').then(function(result) {
+        console.log('STDOUT: ' + result.stdout)
+        console.log('STDERR: ' + result.stderr)
+        ssh.dispose()
+      })
+})
+
