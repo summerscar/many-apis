@@ -2,14 +2,11 @@ const request = require('request-promise')
 const log4js = require('../log')
 const fs = require('fs');
 
-const logger = log4js.getLogger('api');
-logger.level = 'all';
-let allApis 
+let allApis
 
 let getIndex = async (ctx, next) => {
     allApis = []
     addControllers()
-    logger.info(`GET /getIndex 被调用 origin: ${ctx.request.header.origin || '直接访问'}`)
     ctx.body = {allApis}
   }
 
